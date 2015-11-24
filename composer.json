@@ -3,7 +3,8 @@
     "description": "logger for pulpy project",
     "type": "libs",
     "require": {
-        "dendev/plpadaptability": "dev-master"
+        "dendev/plpadaptability": "dev-master",
+        "monolog/monolog": "^1.18@dev"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"
@@ -17,7 +18,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "DenDev\\Plplogger\\": "src"
+            "DenDev\\Plplogger\\": "src",
+            "DenDev\\Plplogger\\Lib\\": "src/libs/"
         }
     }
 }
