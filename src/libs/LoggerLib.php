@@ -98,15 +98,12 @@ class LoggerLib
         $handler_firefox = new FirePHPHandler( Logger::ERROR );
         $handler_firefox->setFormatter( new WildfireFormatter() );
 
-        $token = $this->config['slack_token'];
-        $channel = $this->config['slack_channel'];
-        $bot_name = $this->config['slack_bot_name'];
-        $bot_img = $this->config['slack_bot_name'];
-        if( $token )
-        {
-            $handler_slack = new SlackHandler( $token , $channel, $bot_name, true, $bot_img, Logger::DEBUG );
-        }
-
+        $token = $this->_config['slack_token'];
+        $channel = $this->_config['slack_channel'];
+        $bot_name = $this->_config['slack_bot_name'];
+        $bot_img = $this->_config['slack_bot_name'];
+        $handler_slack = new SlackHandler( $token , $channel, $bot_name, true, $bot_img, Logger::DEBUG );
+       
         // logger
         $log = new Logger( 'debug' );
         $log->pushProcessor( new GitProcessor() );
